@@ -1,0 +1,23 @@
+{{> header }}
+
+<main{{#if navsub}} class="subpages"{{/if}}>
+
+	<div class="content">
+
+		<article>
+
+			<h1>{{ title }}</h1>
+
+			{{{ contents }}}
+      
+			{{> pagelist }}
+
+			</article>
+
+		{{> navsub }}
+
+		</div>
+
+</main>
+
+{{> footer template='projects' }}

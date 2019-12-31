@@ -1,7 +1,7 @@
 ---
 title: Projects
 description: A set of articles published on this site.
-priority: 0.8
+priority: 0.5
 layout: projects.html
 ---
 

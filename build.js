@@ -1,123 +1,119 @@
 #!/usr/bin/env node
-
-/*
-Metalsmith build file
-Build site with `node ./build.js` or `npm start`
-Build production site with `npm run production`
-*/
-
 'use strict';
 
-var
-// defaults
-  consoleLog = false, // set true for metalsmith file and meta content logging
-  devBuild = ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production'),
-  pkg = require('./package.json'),
+var build = {
+  consoleLog: false, // Set true for metalsmith file and meta content logging
+  devMode: ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production'),
+  pkg: require('./package.json')
+}
 
-  // main directories
-  dir = {
-    base: __dirname + '/',
-    lib: __dirname + '/lib/',
-    source: './src/',
-    dest: './build/'
+var dir = {
+  base: __dirname + '/',
+  lib: __dirname + '/lib/',
+  source: './src/',
+  dest: './build/'
+}
+
+var siteMeta = {
+  devBuild: build.devMode,
+  version: build.pkg.version,
+  name: 'Louis Lefevre',
+  desc: 'Portfolio of projects by Louis Lefevre',
+  author: 'Louis Lefevre',
+  contact: 'https://github.com/louislefevre',
+  domain: build.devMode ? 'http://127.0.0.1' : 'https://rawgit.com', // set domain
+  rootpath: build.devMode ? null : '/louislefevre/portfolio/master/build/' // set absolute path (null for relative)
+}
+
+var collectionsConfig = {
+  page: {
+    pattern: '**/index.*',
+    sortBy: 'priority',
+    reverse: true,
+    refer: false
   },
-
-  // modules
-  metalsmith = require('metalsmith'),
-  markdown = require('metalsmith-markdown'),
-  publish = require('metalsmith-publish'),
-  collections = require('metalsmith-collections'),
-  permalinks = require('metalsmith-permalinks'),
-  inplace = require('metalsmith-in-place'),
-  layouts = require('metalsmith-layouts'),
-  sitemap = require('metalsmith-mapsite'),
-  rssfeed = require('metalsmith-feed'),
-  assets = require('metalsmith-assets'),
-  htmlmin = devBuild ? null : require('metalsmith-html-minifier'),
-  browsersync = devBuild ? require('metalsmith-browser-sync') : null,
-
-  // custom plugins
-  setdate = require(dir.lib + 'metalsmith-setdate'),
-  moremeta = require(dir.lib + 'metalsmith-moremeta'),
-  debug = consoleLog ? require(dir.lib + 'metalsmith-debug') : null,
-
-  siteMeta = {
-    devBuild: devBuild,
-    version: pkg.version,
-    name: 'Louis Lefevre',
-    desc: 'Portfolio of projects by Louis Lefevre',
-    author: 'Louis Lefevre',
-    contact: 'https://github.com/louislefevre',
-    domain: devBuild ? 'http://127.0.0.1' : 'https://rawgit.com', // set domain
-    rootpath: devBuild ? null : '/craigbuckler/metalsmith-demo/master/build/' // set absolute path (null for relative)
-  },
-
-  templateConfig = {
-    engine: 'handlebars',
-    directory: dir.source + 'template/',
-    partials: dir.source + 'partials/',
-    default: 'page.html'
-  };
-
-console.log((devBuild ? 'Development' : 'Production'), 'build, version', pkg.version);
-
-var ms = metalsmith(dir.base)
-  .clean(true) // clean folder before a production build //!devBuild
-  .source(dir.source + 'html/') // source folder (src/html/)
-  .destination(dir.dest) // build folder (build/)
-  .metadata(siteMeta) // add meta data to every page
-  .use(publish()) // draft, private, future-dated
-  .use(setdate()) // set date on every page if not set in front-matter
-  .use(collections({ // determine page collection/taxonomy
-    page: {
-      pattern: '**/index.*',
-      sortBy: 'priority',
-      reverse: true,
-      refer: false
-    },
-    post: {
-      pattern: 'posts/**/*',
-      sortBy: 'date',
-      reverse: true,
-      refer: true,
-      limit: 50,
-      metadata: {
-        layout: 'post.html'
-      }
+  post: {
+    pattern: 'posts/**/*',
+    sortBy: 'date',
+    reverse: true,
+    refer: true,
+    metadata: {
+      layout: 'post.html'
     }
-  }))
-  .use(markdown()) // convert markdown
-  .use(permalinks({ // generate permalinks
-    pattern: ':mainCollection/:title'
-  }))
-  .use(moremeta()) // determine root paths and navigation
-  .use(inplace(templateConfig)) // in-page templating
-  .use(layouts(templateConfig)); // layout templating
+  }
+}
 
-if (htmlmin) ms.use(htmlmin()); // minify production HTML
+var permalinksConfig = {
+  pattern: ':mainCollection/:title'
+}
 
-if (debug) ms.use(debug()); // output page debugging information
+var templateConfig = {
+  engine: 'handlebars',
+  directory: dir.source + 'template/',
+  partials: dir.source + 'partials/'
+}
 
-if (browsersync) ms.use(browsersync({ // start test server
-  server: dir.dest,
-  files: [dir.source + '**/*']
-}));
+const metalsmith = require('metalsmith')
+const markdown = require('metalsmith-markdown')
+const publish = require('metalsmith-publish')
+const collections = require('metalsmith-collections')
+const permalinks = require('metalsmith-permalinks')
+const inplace = require('metalsmith-in-place')
+const layouts = require('metalsmith-layouts')
+const sitemap = require('metalsmith-mapsite')
+const rssfeed = require('metalsmith-feed')
+const assets = require('metalsmith-assets')
+const htmlmin = build.devMode ? null : require('metalsmith-html-minifier')
+const browsersync = build.devMode ? require('metalsmith-browser-sync') : null
+const setdate = require(dir.lib + 'metalsmith-setdate')
+const moremeta = require(dir.lib + 'metalsmith-moremeta')
+const debug = build.consoleLog ? require(dir.lib + 'metalsmith-debug') : null
 
-ms
-  .use(sitemap({ // generate sitemap.xml
+var base = metalsmith(dir.base)
+  .clean(true)
+  .source(dir.source + 'html/')
+  .destination(dir.dest)
+  .metadata(siteMeta)
+  .use(publish())
+  .use(setdate())
+  .use(collections(collectionsConfig))
+  .use(markdown())
+  .use(permalinks(permalinksConfig))
+  .use(moremeta())
+  .use(inplace(templateConfig))
+  .use(layouts(templateConfig));
+
+if (htmlmin) 
+  base.use(htmlmin());
+
+if (debug) 
+  base.use(debug());
+
+if (browsersync)
+  base.use(browsersync({ 
+    server: dir.dest,
+    files: [dir.source + '**/*']
+  }));
+
+base
+  .use(sitemap({
     hostname: siteMeta.domain + (siteMeta.rootpath || ''),
     omitIndex: true
   }))
-  .use(rssfeed({ // generate RSS feed for articles
+  .use(rssfeed({
     collection: 'post',
     site_url: siteMeta.domain + (siteMeta.rootpath || ''),
     title: siteMeta.name,
     description: siteMeta.desc
   }))
-  .use(assets({ // copy assets: CSS, images etc.
+  .use(assets({
     source: dir.source + 'assets/',
     destination: './'
   }))
-  .build(function(err) { // build
-    if (err) throw err;
+  .build(function(err) {
+    if (err)
+      throw err;
+    else
+      console.log("Build successful")
+      console.log((build.devMode ? 'Development' : 'Production'), 'build, version', build.pkg.version);
   });

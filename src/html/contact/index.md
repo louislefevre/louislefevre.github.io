@@ -1,6 +1,7 @@
 ---
 title: Contact
-priority: 0.7
+priority: 0
+layout: contact.html
 ---
 
 Any questions?

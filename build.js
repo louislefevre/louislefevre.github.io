@@ -47,10 +47,10 @@ var permalinksConfig = {
   pattern: ':mainCollection/:title'
 }
 
-var templateConfig = {
+var layoutConfig = {
   engine: 'handlebars',
-  directory: dir.source + 'template/',
-  partials: dir.source + 'partials/'
+  directory: dir.source + 'layouts/',
+  partials: dir.source + 'layouts/partials/'
 }
 
 const metalsmith = require('metalsmith')
@@ -80,8 +80,8 @@ var base = metalsmith(dir.base)
   .use(markdown())
   .use(permalinks(permalinksConfig))
   .use(moremeta())
-  .use(inplace(templateConfig))
-  .use(layouts(templateConfig));
+  .use(inplace(layoutConfig))
+  .use(layouts(layoutConfig));
 
 if (htmlmin) 
   base.use(htmlmin());

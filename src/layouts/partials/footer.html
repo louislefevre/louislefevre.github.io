@@ -1,6 +1,15 @@
 		<footer>
-			<p>Copyright © 2020 <a href="{{ contact }}">{{ author }}</a></p>
-			<p class="siteinfo">{{#if devBuild}}Development{{else}}Production{{/if}} build, version {{ version }}</p>
+			<p>Copyright © 2020 
+				<a href="{{ contact }}">{{ author }}</a>
+			</p>
+			<p class="siteinfo">
+				{{#if devBuild}}
+					Development
+				{{else}}
+					Production
+				{{/if}} 
+				build, version {{ version }}
+			</p>
 		</footer>
 	</body>
 </html>

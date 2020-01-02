@@ -5,6 +5,6 @@ priority: 1
 layout: home.html
 ---
 
-[![Node.js]({{ root }}/images/profile_picture.jpg)](https://github.com/louislefevre)
+[![Node.js]({{ root }}/images/profile-picture.jpg)](https://github.com/louislefevre)
 
 [Review projects&hellip;]({{ root }}project/)

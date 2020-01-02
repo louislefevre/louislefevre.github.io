@@ -1,10 +1,14 @@
-<!-- main navigation -->
-<nav class="nav main">
-	<ul>
-	{{#each navmain}}
-		<li>
-			<a href="{{path}}"{{#if active}} class="active"{{/if}}>{{title}}</a>
-		</li>
-	{{/each}}
-	</ul>
-</nav>
+<div class="content">
+	<p class="logo">
+		<a href="{{ root }}">{{ name }}</a>
+	</p>
+	<nav class="nav main">
+		<ul>
+		{{#each navmain}}
+			<li>
+				<a href="{{path}}"{{#if active}} class="active"{{/if}}>{{title}}</a>
+			</li>
+		{{/each}}
+		</ul>
+	</nav>
+</div>

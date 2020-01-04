@@ -1,0 +1,106 @@
+/* Global styles */
+body {
+	background-color: #2c3e50;
+	overflow-x: hidden;
+}
+
+/* Home page styles */
+hr.star-light {
+	margin: 25px auto 30px;
+	padding: 0;
+	max-width: 250px;
+	border: 0;
+	border-top: solid 5px;
+	text-align: center;
+}
+hr.star-light:after {
+	content: "\f005";
+	display: inline-block;
+	position: relative;
+	top: -.8em;
+	padding: 0 .25em;
+	font-family: FontAwesome;
+	font-size: 2em;
+}
+hr.star-light {
+	border-color: #fff;
+}
+hr.star-light:after {
+	color: #fff;
+	background-color: #2c3e50;
+}
+.icon-container {
+	text-align: center;
+	color: #fff;
+	background: #2c3e50;
+}
+.icon-container .container {
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+.icon-container img {
+	border: 2px #fff solid;
+	border-radius: 100px;
+	display: block;
+	margin: 0 auto 20px;
+	width: 170px;
+	height: 170px;
+}
+.icon-container .intro-text .name {
+	text-transform: uppercase;
+	font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 2em;
+	font-weight: 300;
+}
+.icon-container .intro-text .about {
+	font-size: 1.25em;
+	font-weight: 300;
+}
+@media (min-width:768px) {
+	.icon-container .intro-text .name {
+	font-size: 4.75em;
+}
+.icon-container .intro-text .about {
+	font-size: 1.75em;
+}
+}.links {
+	margin-top: 15px;
+}
+.btn-outline {
+	margin-top: 15px;
+	border: solid 2px #fff;
+	font-size: 20px;
+	color: #fff;
+	background: 0 0;
+	transition: all .3s ease-in-out;
+}
+.btn-outline:active, .btn-outline:focus, .btn-outline:hover {
+	border: solid 2px #fff;
+	background: #fff;
+}
+.btn-outline-default:active, .btn-outline-default:focus, .btn-outline-default:hover {
+	color: #2c3e50;
+}
+.btn-outline-github:active, .btn-outline-github:focus, .btn-outline-github:hover {
+	color: #171515;
+}
+.btn-outline-vk:active, .btn-outline-vk:focus, .btn-outline-vk:hover {
+	color: #45668e;
+}
+.btn-social {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border: 2px solid #fff;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 20px;
+	line-height: 45px;
+}
+.btn:active, .btn:focus {
+	outline: 0;
+}
+.btn-outline-instagram:active, .btn-outline-instagram:focus, .btn-outline-instagram:hover {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+	color: #fff;
+}

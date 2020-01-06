@@ -1,9 +1,8 @@
-<div class="content">
-	<p class="logo">{{ name }}</p>
-	<nav class="nav main">
-		<ul>
+<div class="header-bar">
+	<nav class="header-nav">
+		<ul class="nav-list">
 		{{#each navmain}}
-			<li>
+			<li class="nav-item">
 				<a href="{{path}}"{{#if active}} class="active"{{/if}}>{{title}}</a>
 			</li>
 		{{/each}}

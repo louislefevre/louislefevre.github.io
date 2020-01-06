@@ -112,135 +112,40 @@ hr.star-light:after {
 }
 
 
-/* Header & footer styles*/
-header {
-	display: block;
-	padding: 1rem 2rem 1rem 2rem;
-	font-size: 2rem;
-}
-
-header, footer {
+/* Footer styles*/
+.footer-bar {
 	clear: both;
-	width: 100%;
-	overflow: auto;
-}
-
-footer {
 	font-size: 0.85em;
 	padding: 1em;
 	text-align: center;
 }
 
-footer p {
-	margin: 0;
-}
 
+/* Header bar*/
+.header-bar {
+	display: block;
+	padding: 1rem 2rem 1rem 2rem;
+	font-size: 2rem;
+	overflow: auto;
+}
+.header-nav {
+	float: right;
+}
 
 /* Navigation bar styles */
-.logo {
-	font-size: 1.5em;
-	margin: 0.2em 0 0 0;
-	color: #999;
-}
-
-.nav ul {
+.nav-list {
 	display: flex;
-	flex-wrap: wrap;
 	list-style-type: none;
-	margin: 0;
-	
 }
-
-.nav li {
-	flex: 1 1 100%;
-	margin: 0;
+.nav-item {
+	width: 6em;
 }
-
-.nav a, .nav strong {
+.nav-item a {
+	color: #fff;
+	text-decoration: none;
 	display: block;
 	text-align: center;
-	white-space: nowrap;
-	padding: 0.6em 0;
 }
-
-.nav.main a {
-	color: #fff;
-}
-
-.nav a.active, .nav strong {
-	color: #fff;
-	border-bottom: 3px solid #fff;
-}
-
-.nav.page {
-	margin-top: 1.5em;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-}
-
-@media (min-width: 16em) {
-	.nav li {
-		flex: 1 1 50%;
-	}
-}
-
-@media (min-width: 32em) {
-	.logo {
-		float: left;
-	}
-
-	.nav.main {
-		float: right;
-	}
-
-	.nav li {
-		flex: 1 1 auto;
-	}
-
-	.nav.main li {
-		width: 6em;
-	}
-
-	main {
-		padding: 3em 0 2em 0;
-	}
-
-	.subpages .content {
-		display: flex;
-	}
-
-	.subpages article {
-		flex: 1 1 70%;
-		min-width: 0;
-	}
-
-	.subpages .nav.sub {
-		flex: 1 1 30%;
-		margin: 0 0 0 2rem;
-	}
-
-	.nav.sub ul {
-		margin-top: 1em;
-		flex-direction: column;
-		border-top: 1px dotted #ccc;
-	}
-
-	.nav.sub li {
-		border-bottom: 1px dotted #ccc;
-	}
-
-	.nav.sub a, .nav.sub strong {
-		text-align: left;
-		padding-left: 0.75em;
-	}
-
-	.nav.page a {
-		text-align: left;
-		padding-left: 0.5em;
-		padding-right: 0.5em;
-	}
-
-	.nav.page a.next {
-		text-align: right;
-	}
+.nav-item a.active {
+	border-bottom: 3px solid;
 }

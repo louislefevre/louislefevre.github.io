@@ -10,10 +10,6 @@ body {
 }
 
 
-
-
-
-
 /* Home page styles */
 hr.star-light {
 	margin: 25px auto 30px;
@@ -116,13 +112,11 @@ hr.star-light:after {
 }
 
 
-
-
-
-
 /* Header & footer styles*/
 header {
 	display: block;
+	padding: 1rem 2rem 1rem 2rem;
+	font-size: 2rem;
 }
 
 header, footer {
@@ -142,17 +136,10 @@ footer p {
 }
 
 
-
-
-
 /* Navigation bar styles */
 .logo {
 	font-size: 1.5em;
 	margin: 0.2em 0 0 0;
-}
-
-.logo a {
-	padding: 0.2em 0;
 	color: #999;
 }
 
@@ -161,7 +148,7 @@ footer p {
 	flex-wrap: wrap;
 	list-style-type: none;
 	margin: 0;
-	padding: 1rem 2rem 1rem 2rem;
+	
 }
 
 .nav li {
@@ -181,8 +168,8 @@ footer p {
 }
 
 .nav a.active, .nav strong {
-	text-decoration: underline;
 	color: #fff;
+	border-bottom: 3px solid #fff;
 }
 
 .nav.page {

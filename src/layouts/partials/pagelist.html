@@ -1,15 +1,13 @@
-{{#if navsub}}
-	<ul class="pagelist">
-	{{#each navsub}}
-		<li>
-			<a href="{{ path }}">
-				<h2>{{ title }}</h2>
-				<p class="articleinfo">{{ dateFormat }}</p>
-				{{#if description}}
-					<p>{{ description }}</p>
-				{{/if}}
-			</a>
-		</li>
-	{{/each}}
-	</ul>
-{{/if}}
+<ul class="projects-list">
+{{#each navsub}}
+	<li class="projects-item">
+		<a class="projects-link" href="{{ path }}">
+			<h2 class="projects-title">{{ title }}</h2>
+			<p class="projects-date">{{ dateFormat }}</p>
+			{{#if description}}
+				<p class="projects-info">{{ description }}</p>
+			{{/if}}
+		</a>
+	</li>
+{{/each}}
+</ul>

@@ -1,18 +1,18 @@
 {{> header }}
 
-<main class="subpages post-container">
-	<div class="content post-section">
+<main class="post-container">
+	<div class="post-section">
 		<article class="post-article">
 			<h1>{{ title }}</h1>
 			<p class="article-date">Published {{ dateFormat }}</p>
-			{{{ contents }}}
-				<nav class="nav page post-nav">
+			<p>{{{ contents }}}</p>
+				<nav class="post-nav">
 					<ul class="post-nav-list">
 					{{#if previous.title }}
-						<li class="post-nav-item"><a href="{{ root }}{{ previous.path }}/" class="back nav-link">&laquo; back: {{ previous.title }}</a></li></p>
+						<li class="post-nav-item"><a href="{{ root }}{{ previous.path }}/" class="nav-link back">&laquo; back: {{ previous.title }}</a></li></p>
 					{{/if}}
 					{{#if next.title }}
-						<li><a href="{{ root }}{{ next.path }}/" class="next nav-link">next: {{ next.title }} &raquo;</a></li></p>
+						<li><a href="{{ root }}{{ next.path }}/" class="nav-link next">next: {{ next.title }} &raquo;</a></li></p>
 					{{/if}}
 					</ul>
 				</nav>

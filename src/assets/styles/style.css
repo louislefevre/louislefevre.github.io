@@ -130,67 +130,13 @@ body {
 /* In Progress Project List*/
 /* Projects Page */
 .projects-container {
-	clear: both;
-	background-color: #fff;
-	overflow: auto;
-	padding: 3em 0 2em 0;
-	max-width: 75em;
-	padding: 0 0.5em;
-	margin: 0 auto;
-	display: flex;
-}
-.projects-section {
-	padding: 1rem 0;
-	flex: 1 1 70%;
-	min-width: 0;
-}
-
-/* Project Sub Nav */
-.list-navsub {
-	flex: 1 1 30%;
-	margin: 0 0 0 2rem;
-}
-.navsub-list {
-	display: flex;
-	flex-wrap: wrap;
-	list-style-type: none;
-	margin: 0;
-	margin-top: 1em;
-	flex-direction: column;
-	border-top: 1px dotted #ccc;
-}
-.navsub-item {
-	flex: 1 1 100%;
-	margin: 0;
-	border-bottom: 1px dotted #ccc;
-}
-.navsub-active {
-	display: block;
-	text-align: center;
-	white-space: nowrap;
-	padding: 0.6em 0;
-	text-align: left;
-	padding-left: 0.75em;
-}
-.navsub-active.active {
-	background-color: #fff;
-}
-.navsub-inactive {
-	display: block;
-	text-align: center;
-	white-space: nowrap;
-	padding: 0.6em 0;
-	background-color: #fff;
-	text-align: left;
-	padding-left: 0.75em;
+	max-width: 50em;
+	margin: auto;
 }
 
 /* Project List */
 .projects-list {
 	list-style-type: none;
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0;
 	line-height: 1.3;
 }
 .projects-item {
@@ -226,14 +172,10 @@ body {
 /* Post Page */
 .post-container {
 	clear: both;
-	background-color: #fff;
 	overflow: auto;
 	padding: 3em 0 2em 0;
-}
-.post-section {
 	max-width: 50em;
-	padding: 0 0.5em;
-	margin: 0 auto;
+	margin: auto;
 	display: flex;
 }
 .post-article {
@@ -257,8 +199,7 @@ body {
 	margin: 0;
 }
 .post-nav-item {
-	margin: 0;
-	flex: 1 1 auto;
+	flex: auto;
 }
 .nav-link {
 	display: block;
@@ -274,4 +215,47 @@ body {
 }
 .nav-link.next {
 	text-align: right;
+}
+
+/* Project Sub Nav */
+.list-navsub {
+	flex: 1 1 30%;
+	margin: 0 0 0 2rem;
+}
+.navsub-list {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin: 0;
+	margin-top: 1em;
+	flex-direction: column;
+	border-top: 1px dotted #ccc;
+}
+.navsub-item {
+	flex: 1 1 100%;
+	margin: 0;
+	border-bottom: 1px dotted #ccc;
+}
+.navsub-active {
+	display: block;
+	text-align: center;
+	white-space: nowrap;
+	padding: 0.6em 0;
+	text-align: left;
+	padding-left: 0.75em;
+}
+.navsub-inactive {
+	display: block;
+	text-align: center;
+	white-space: nowrap;
+	padding: 0.6em 0;
+	text-align: left;
+	padding-left: 0.75em;
+}
+
+/* Contact Page */
+.contact-container {
+	max-width: 50em;
+	padding: 0 0.5em;
+	margin: 0 auto;
 }

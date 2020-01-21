@@ -63,7 +63,7 @@ body {
 }
 .home-name {
 	text-transform: uppercase;
-	font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Source Sans Pro';
 	font-weight: 300;
 	font-size: 4.75em;
 }

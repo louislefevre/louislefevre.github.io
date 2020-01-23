@@ -1,18 +1,28 @@
 /* Global styles */
+html {
+	font-family: sans-serif;
+	font-size: 10px;
+}
 body {
 	background-color: #1B1D1E;
 	overflow-x: hidden;
+	line-height: 1.5;
 }
 *, *:before, *:after {
   box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 }
+a {
+	color: #337ab7;
+  text-decoration: none;
+}
 
 /* Header */
 .header-bar {
 	display: block;
 	padding: 1rem 2rem 1rem 2rem;
+
 	font-size: 2rem;
 	overflow: auto;
 }
@@ -26,6 +36,7 @@ body {
 	font-size: 0.85em;
 	padding: 1em;
 	text-align: center;
+	color: #333;
 }
 
 /* Navigation Bar */
@@ -48,6 +59,7 @@ body {
 
 /* Home Page */
 .home-container {
+	font-size: 14px;
 	text-align: center;
 	color: #fff;
 	padding-top: 50px;
@@ -62,7 +74,6 @@ body {
 	height: 180px;
 }
 .home-name {
-	text-transform: uppercase;
 	font-family: 'Source Sans Pro';
 	font-weight: 300;
 	font-size: 4.75em;
@@ -74,6 +85,7 @@ body {
 
 /* Home Line Break */
 .home-line {
+	height: 0;
 	margin: 25px auto 30px;
 	padding: 0;
 	max-width: 250px;
@@ -127,14 +139,11 @@ body {
 	color: #171515;
 }
 
-/* In Progress Project List*/
 /* Projects Page */
 .projects-container {
 	max-width: 50em;
 	margin: auto;
 }
-
-/* Project List */
 .projects-list {
 	list-style-type: none;
 	line-height: 1.3;

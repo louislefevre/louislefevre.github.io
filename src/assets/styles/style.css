@@ -14,11 +14,18 @@ a {
 	color: #337ab7;
   text-decoration: none;
 }
+p {
+	font-size: 1em;
+}
 
 /* Header */
-.header-nav {
+.header-bar {
+	display: block;
 	padding: 0.5em 10em 0em 0em;
 	font-size: 2em;
+	overflow: auto;
+}
+.header-nav {
 	float: right;
 }
 
@@ -33,6 +40,7 @@ a {
 .nav-list {
 	display: flex;
 	list-style-type: none;
+	
 }
 .nav-item {
 	width: 6em;

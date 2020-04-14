@@ -1,16 +1,16 @@
 {{> header }}
 
-<main class="projects-container">
+<main class="projects">
 	<h1>{{ title }}</h1>
-	{{{ contents }}}
+	<p>{{{ contents }}}</p>
 
-	<ul class="projects-list">
+	<ul>
 		{{#each navsub}}
-			<li class="projects-item">
-				<a class="projects-link" href="{{ path }}">
-					<h2 class="projects-title">{{ title }}</h2>
-					<p class="projects-date">{{ dateFormat }}</p>
-					<p class="projects-info">{{ description }}</p>
+			<li>
+				<a href="{{ path }}">
+					<h2 class="project-title">{{ title }}</h2>
+					<p class="project-date">{{ dateFormat }}</p>
+					<p class="project-info">{{ description }}</p>
 				</a>
 			</li>
 		{{/each}}

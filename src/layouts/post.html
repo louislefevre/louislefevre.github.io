@@ -1,27 +1,27 @@
 {{> header }}
 
-<main class="post-container">
-	<article class="post-article">
+<main class="post">
+	<article>
 		<h1>{{ title }}</h1>
-		<p class="article-date">Published {{ dateFormat }}</p>
+		<p class="date">Published {{ dateFormat }}</p>
 		<p>{{{ contents }}}</p>
 
-		<nav class="post-nav">
-			<ul class="post-nav-list">
-					<li class="post-nav-item"><a href="{{ root }}{{ previous.path }}/" class="nav-link back">&laquo; back: {{ previous.title }}</a></li>
-					<li class="post-nav-item"><a href="{{ root }}{{ next.path }}/" class="nav-link next">next: {{ next.title }} &raquo;</a></li>
+		<nav class="nav">
+			<ul>
+					<li><a href="{{ root }}{{ previous.path }}/" class="back">&laquo; back: {{ previous.title }}</a></li>
+					<li><a href="{{ root }}{{ next.path }}/" class="next">next: {{ next.title }} &raquo;</a></li>
 			</ul>
 		</nav>
 	</article>
 	
-	<nav class="list-navsub">
-		<ul class="navsub-list">
+	<nav class="navsub">
+		<ul>
 			{{#each navsub}}
-				<li class="navsub-item">
+				<li>
 					{{#if active}}
-						<strong class="navsub-active">{{title}}</strong>
+						<strong>{{title}}</strong>
 					{{else}}
-						<a class="navsub-inactive" href="{{path}}">{{title}}</a>
+						<a href="{{path}}">{{title}}</a>
 					{{/if}}
 				</li>
 			{{/each}}

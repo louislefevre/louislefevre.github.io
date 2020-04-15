@@ -186,8 +186,38 @@ header ul>li>a.active {
 /* Contact Page */
 .contact {
 	font-size: 1.5em;
-	max-width: 50em;
+	max-width: 60em;
 	margin: auto;
+}
+
+/* Form */
+.form
+{
+	margin-top: 1em;
+	border-radius: 5px;
+	line-height: 10px;
+}
+.form input[type=text], .form textarea[type=text]
+{
+		min-width: 50%;
+		max-width: 50%;
+    padding: 0.5em;
+    margin: 5px 0;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 5px;
+		box-sizing: border-box;
+}
+.form input[type=submit]
+{
+		width: 50%;
+    cursor: pointer;
+    background-color: rgb(0, 129, 200);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px 0;
 }
 
 /* Footer */

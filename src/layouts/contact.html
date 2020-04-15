@@ -1,10 +1,13 @@
 {{> header }}
 
 <main class="contact">
-   <article>
-      <h1>{{ title }}</h1>
-      <p>{{{ contents }}}</p>
-   </article>
+   <h1>{{ title }}</h1>
+   <p>{{{ contents }}}</p>
+   <form class="form">
+      <input type="text" id="email" placeholder="Email">
+      <textarea type="text" id="message" placeholder="Message"></textarea>
+      <input type="submit" value="Submit">
+  </form>
 </main>
 
 {{> footer }}

@@ -4,6 +4,4 @@ priority: 0
 layout: contact.html
 ---
 
-Any questions?
-
-Find me at [GitHub]({{ contact }}).
+Contact me via [email](mailto:{{contact}}) or fill in the form below.

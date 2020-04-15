@@ -20,7 +20,8 @@ var siteMeta = {
   name: 'Louis Lefevre',
   desc: 'Portfolio of projects by Louis Lefevre',
   author: 'Louis Lefevre',
-  contact: 'https://github.com/louislefevre',
+  contact: 'louislefev@gmail.com',
+  github: 'https://github.com/louislefevre',
   domain: build.devMode ? 'http://127.0.0.1' : 'https://rawgit.com', // set domain
   rootpath: build.devMode ? null : '/louislefevre/portfolio/master/build/' // set absolute path (null for relative)
 }

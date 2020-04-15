@@ -22,8 +22,8 @@ var siteMeta = {
   author: 'Louis Lefevre',
   contact: 'louislefev@gmail.com',
   github: 'https://github.com/louislefevre',
-  domain: build.devMode ? 'http://127.0.0.1' : 'https://rawgit.com', // set domain
-  rootpath: build.devMode ? null : '/louislefevre/portfolio/master/build/' // set absolute path (null for relative)
+  domain: build.devMode ? 'http://127.0.0.1' : 'http://louislefevre.github.io/', // set domain
+  rootpath: build.devMode ? null : '' // set absolute path (null for relative)
 }
 
 var collectionsConfig = {

@@ -1,5 +1,5 @@
 ---
 title: Projects
-priority: 0.5
+position: 2
 layout: projects.html
 ---

@@ -1,6 +1,6 @@
 ---
 title: Contact
-priority: 0
+position: 3
 layout: contact.html
 ---
 

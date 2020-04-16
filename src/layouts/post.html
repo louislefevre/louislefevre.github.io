@@ -8,11 +8,13 @@
 
 		<nav class="nav">
 			<ul>
-				{{#if previous.title}}
-					<li><a href="{{ root }}{{ previous.path }}/" class="back">&laquo; {{ previous.title }}</a></li>
-				{{/if}}
+				{{#unless previous.isIndex}} <!-- Prevents navigation from showing 'Projects' page -->
+					{{#if previous.title}}
+							<li><a href="{{ root }}{{ previous.path }}/" class="back">&laquo; {{ previous.title }}</a></li>
+					{{/if}}
+				{{/unless}}
 				{{#if next.title}}
-					<li><a href="{{ root }}{{ next.path }}/" class="next">{{ next.title }} &raquo;</a></li>
+						<li><a href="{{ root }}{{ next.path }}/" class="next">{{ next.title }} &raquo;</a></li>
 				{{/if}}
 			</ul>
 		</nav>

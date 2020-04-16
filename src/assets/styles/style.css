@@ -152,13 +152,13 @@ header ul>li>a.active {
 }
 .post .nav>ul>li {
 	flex: auto;
-}
-.post .nav>ul>li>a {
-	display: block;
 	padding: 0.6em;
 }
+.post .nav>ul>li>a.back {
+	float: left;
+}
 .post .nav>ul>li>a.next {
-	text-align: right;
+	float: right;
 }
 
 /* Project Sub Nav */

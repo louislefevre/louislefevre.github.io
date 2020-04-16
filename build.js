@@ -28,12 +28,12 @@ var siteMeta = {
 
 var collectionsConfig = {
   page: {
-    pattern: '**/index.*',
+    pattern: '**/index.md',
     sortBy: 'position',
     refer: false
   },
   post: {
-    pattern: 'posts/**/*',
+    pattern: 'projects/*.md',
     sortBy: 'date',
     reverse: true,
     refer: true,

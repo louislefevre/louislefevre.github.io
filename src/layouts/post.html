@@ -8,8 +8,12 @@
 
 		<nav class="nav">
 			<ul>
-					<li><a href="{{ root }}{{ previous.path }}/" class="back">&laquo; back: {{ previous.title }}</a></li>
-					<li><a href="{{ root }}{{ next.path }}/" class="next">next: {{ next.title }} &raquo;</a></li>
+				{{#if previous.title}}
+					<li><a href="{{ root }}{{ previous.path }}/" class="back">&laquo; {{ previous.title }}</a></li>
+				{{/if}}
+				{{#if next.title}}
+					<li><a href="{{ root }}{{ next.path }}/" class="next">{{ next.title }} &raquo;</a></li>
+				{{/if}}
 			</ul>
 		</nav>
 	</article>
@@ -19,9 +23,9 @@
 			{{#each navsub}}
 				<li>
 					{{#if active}}
-						<strong>{{title}}</strong>
+						<strong>{{ title }}</strong>
 					{{else}}
-						<a href="{{path}}">{{title}}</a>
+						<a href="{{ path }}">{{ title }}</a>
 					{{/if}}
 				</li>
 			{{/each}}

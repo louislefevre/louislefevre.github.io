@@ -2,7 +2,7 @@
 title: Home
 priority: 1
 layout: home.html
-name: Louis Lefevre
 image: images/profile-picture.jpg
+name: Louis Lefevre
+description: Computer Science student at Goldsmiths, University of London
 ---
-Computer Science student at Goldsmiths, University of London

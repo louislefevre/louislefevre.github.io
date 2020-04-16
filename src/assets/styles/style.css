@@ -56,8 +56,7 @@ header ul>li>a.active {
   height: 18em;
 }
 .home .name {
-  font-family: 'Source Sans Pro';
-  font-size: 4.75em;
+  font-size: 4.5em;
 }
 .home hr {
   margin: auto;
@@ -115,9 +114,6 @@ header ul>li>a.active {
 .projects ul>li>a:hover {
   background-color: #f9f9f9;
   border-color: #999;
-}
-.project-title {
-
 }
 .project-date {
   color: #333;

@@ -189,7 +189,7 @@ header ul>li>a.active {
   border-radius: 5px;
   line-height: 10px;
 }
-.form input[type=text], .form textarea[type=text]
+.form input[type=text], .form textarea
 {
   width: 100%;
   padding: 0.5em;
@@ -199,7 +199,7 @@ header ul>li>a.active {
   border-radius: 5px;
   box-sizing: border-box;
 }
-.form textarea[type=text] {
+.form textarea {
   min-height: 50%;
   min-width: 100%;
   max-width: 100%;

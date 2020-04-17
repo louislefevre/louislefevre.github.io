@@ -3,6 +3,10 @@ title: Home
 position: 1
 layout: home.html
 
+changefreq: monthly
+lastmod: 2020-04-17
+priority: 1.0
+
 image: images/profile-picture.jpg
 name: Louis Lefevre
 description: Computer Science student at Goldsmiths, University of London

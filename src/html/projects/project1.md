@@ -1,9 +1,11 @@
 ---
 title: Project One
-description: An unpublished article.
-publish: draft
+description: An published article.
+publish: 2018-09-09
+
+changefreq: never
+lastmod: 2020-04-17
+priority: 0.5
 ---
 
 This is a draft article.
-
-It will never appear in the site unless the `publish` front-matter is set to `published` or a date which has passed.

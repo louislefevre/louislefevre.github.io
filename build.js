@@ -111,9 +111,12 @@ base
     destination: './'
   }))
   .build(function(err) {
-    if (err)
-      throw err;
-    else
+    if (err) {      
+      console.log("Build failed")
+      throw err
+    }
+    else {
       console.log("Build successful")
-      console.log((build.devMode ? 'Development' : 'Production'), 'build, version', build.pkg.version);
+      console.log((build.devMode ? 'Development' : 'Production'), 'build, version', build.pkg.version)
+    }
   });

@@ -31,7 +31,7 @@ while true; do
   read -p "Push to $REPO repository? [yes/no]" yn
   case $yn in
     [Yy]* ) git push; break;;
-    [Nn]* ) echo Exiting...; exit;;
+    [Nn]* ) echo "Exiting..."; exit;;
         * ) echo "Please answer yes or no.";;
   esac
 done

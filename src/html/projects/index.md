@@ -1,7 +1,7 @@
 ---
 title: Projects
 position: 2
-layout: projects.html
+layout: projects.hbs
 
 changefreq: monthly
 lastmod: 2020-04-17

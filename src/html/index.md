@@ -1,7 +1,7 @@
 ---
 title: Home
 position: 1
-layout: home.html
+layout: home.hbs
 
 changefreq: monthly
 lastmod: 2020-04-17

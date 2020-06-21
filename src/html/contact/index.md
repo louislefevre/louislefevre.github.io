@@ -1,7 +1,7 @@
 ---
 title: Contact
 position: 3
-layout: contact.html
+layout: contact.hbs
 
 changefreq: monthly
 lastmod: 2020-04-17

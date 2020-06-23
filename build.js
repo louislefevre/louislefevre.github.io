@@ -38,7 +38,7 @@ var collectionsConfig = {
     reverse: true,
     refer: true,
     metadata: {
-      layout: 'post.html'
+      layout: 'post.hbs'
     }
   }
 }
@@ -47,17 +47,21 @@ var permalinksConfig = {
   pattern: ':mainCollection/:title'
 }
 
+var partialsConfig = {
+  directory: dir.source + 'layouts/partials/'
+}
+
 var layoutConfig = {
   engine: 'handlebars',
   directory: dir.source + 'layouts/',
-  partials: dir.source + 'layouts/partials/'
 }
 
 const metalsmith = require('metalsmith')
 const markdown = require('metalsmith-markdown')
 const publish = require('metalsmith-publish')
 const collections = require('metalsmith-collections')
-const permalinks = require('metalsmith-permalinks')
+const permalinks = require('@metalsmith/permalinks')
+const discoverPartials = require('metalsmith-discover-partials')
 const inplace = require('metalsmith-in-place')
 const layouts = require('metalsmith-layouts')
 const sitemap = require('metalsmith-mapsite')
@@ -80,6 +84,7 @@ var base = metalsmith(dir.base)
   .use(markdown())
   .use(permalinks(permalinksConfig))
   .use(moremeta())
+  .use(discoverPartials(partialsConfig))
   .use(inplace(layoutConfig))
   .use(layouts(layoutConfig));
 

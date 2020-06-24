@@ -35,7 +35,8 @@
     "metalsmith-mapsite": "latest",
     "metalsmith-markdown": "latest",
     "@metalsmith/permalinks": "latest",
-    "metalsmith-publish": "latest"
+    "metalsmith-publish": "latest",
+    "metalsmith-debug": "latest"
   },
   "directories": {
     "lib": "lib"

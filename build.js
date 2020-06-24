@@ -59,19 +59,19 @@ const layoutConfig = {
 const metalsmith = require('metalsmith')
 const markdown = require('metalsmith-markdown')
 const publish = require('metalsmith-publish')
+const setDate = require(dir.lib + 'metalsmith-setdate')
 const collections = require('metalsmith-collections')
 const permalinks = require('@metalsmith/permalinks')
+const moreMeta = require(dir.lib + 'metalsmith-moremeta')
 const discoverPartials = require('metalsmith-discover-partials')
 const inPlace = require('metalsmith-in-place')
 const layouts = require('metalsmith-layouts')
 const sitemap = require('metalsmith-mapsite')
 const rssFeed = require('metalsmith-feed')
 const assets = require('metalsmith-assets')
-const htmlMin = build.devMode ? null : require('metalsmith-html-minifier')
+const debug = build.consoleLog ? require('metalsmith-debug') : null
 const browserSync = build.devMode ? require('metalsmith-browser-sync') : null
-const setDate = require(dir.lib + 'metalsmith-setdate')
-const moreMeta = require(dir.lib + 'metalsmith-moremeta')
-const debug = build.consoleLog ? require(dir.lib + 'metalsmith-debug') : null
+const htmlMin = build.devMode ? null : require('metalsmith-html-minifier')
 
 const base = metalsmith(dir.base)
   .clean(true)
@@ -88,9 +88,6 @@ const base = metalsmith(dir.base)
   .use(inPlace(layoutConfig))
   .use(layouts(layoutConfig));
 
-if (htmlMin)
-  base.use(htmlMin());
-
 if (debug)
   base.use(debug());
 
@@ -99,6 +96,9 @@ if (browserSync)
     server: dir.dest,
     files: [dir.source + '**/*']
   }));
+
+if (htmlMin)
+  base.use(htmlMin());
 
 base
   .use(sitemap({

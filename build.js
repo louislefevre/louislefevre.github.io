@@ -88,14 +88,14 @@ var base = metalsmith(dir.base)
   .use(inplace(layoutConfig))
   .use(layouts(layoutConfig));
 
-if (htmlmin) 
+if (htmlmin)
   base.use(htmlmin());
 
-if (debug) 
+if (debug)
   base.use(debug());
 
 if (browsersync)
-  base.use(browsersync({ 
+  base.use(browsersync({
     server: dir.dest,
     files: [dir.source + '**/*']
   }));
@@ -115,12 +115,11 @@ base
     source: dir.source + 'assets/',
     destination: './'
   }))
-  .build(function(err) {
-    if (err) {      
+  .build(function (err) {
+    if (err) {
       console.log("Build failed")
       throw err
-    }
-    else {
+    } else {
       console.log("Build successful")
       console.log((build.devMode ? 'Development' : 'Production'), 'build, version', build.pkg.version)
     }

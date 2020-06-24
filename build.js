@@ -62,15 +62,15 @@ const publish = require('metalsmith-publish')
 const collections = require('metalsmith-collections')
 const permalinks = require('@metalsmith/permalinks')
 const discoverPartials = require('metalsmith-discover-partials')
-const inplace = require('metalsmith-in-place')
+const inPlace = require('metalsmith-in-place')
 const layouts = require('metalsmith-layouts')
 const sitemap = require('metalsmith-mapsite')
-const rssfeed = require('metalsmith-feed')
+const rssFeed = require('metalsmith-feed')
 const assets = require('metalsmith-assets')
-const htmlmin = build.devMode ? null : require('metalsmith-html-minifier')
-const browsersync = build.devMode ? require('metalsmith-browser-sync') : null
-const setdate = require(dir.lib + 'metalsmith-setdate')
-const moremeta = require(dir.lib + 'metalsmith-moremeta')
+const htmlMin = build.devMode ? null : require('metalsmith-html-minifier')
+const browserSync = build.devMode ? require('metalsmith-browser-sync') : null
+const setDate = require(dir.lib + 'metalsmith-setdate')
+const moreMeta = require(dir.lib + 'metalsmith-moremeta')
 const debug = build.consoleLog ? require(dir.lib + 'metalsmith-debug') : null
 
 var base = metalsmith(dir.base)
@@ -79,23 +79,23 @@ var base = metalsmith(dir.base)
   .destination(dir.dest)
   .metadata(siteMeta)
   .use(publish())
-  .use(setdate())
+  .use(setDate())
   .use(collections(collectionsConfig))
   .use(markdown())
   .use(permalinks(permalinksConfig))
-  .use(moremeta())
+  .use(moreMeta())
   .use(discoverPartials(partialsConfig))
-  .use(inplace(layoutConfig))
+  .use(inPlace(layoutConfig))
   .use(layouts(layoutConfig));
 
-if (htmlmin)
-  base.use(htmlmin());
+if (htmlMin)
+  base.use(htmlMin());
 
 if (debug)
   base.use(debug());
 
-if (browsersync)
-  base.use(browsersync({
+if (browserSync)
+  base.use(browserSync({
     server: dir.dest,
     files: [dir.source + '**/*']
   }));
@@ -105,7 +105,7 @@ base
     hostname: siteMeta.domain + (siteMeta.rootpath || ''),
     omitIndex: true
   }))
-  .use(rssfeed({
+  .use(rssFeed({
     collection: 'post',
     site_url: siteMeta.domain + (siteMeta.rootpath || ''),
     title: siteMeta.name,

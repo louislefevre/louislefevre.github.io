@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 'use strict';
 
-var build = {
+const build = {
   consoleLog: false, // Set true for metalsmith file and meta content logging
   devMode: ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production'),
   pkg: require('./package.json')
 }
 
-var dir = {
+const dir = {
   base: __dirname + '/',
   lib: __dirname + '/lib/',
   source: './src/',
   dest: './build/'
 }
 
-var siteMeta = {
+const siteMeta = {
   devBuild: build.devMode,
   version: build.pkg.version,
   name: 'Louis Lefevre',
@@ -26,7 +26,7 @@ var siteMeta = {
   rootpath: build.devMode ? null : ''
 }
 
-var collectionsConfig = {
+const collectionsConfig = {
   page: {
     pattern: '**/index.md',
     sortBy: 'position',
@@ -43,15 +43,15 @@ var collectionsConfig = {
   }
 }
 
-var permalinksConfig = {
+const permalinksConfig = {
   pattern: ':mainCollection/:title'
 }
 
-var partialsConfig = {
+const partialsConfig = {
   directory: dir.source + 'layouts/partials/'
 }
 
-var layoutConfig = {
+const layoutConfig = {
   engine: 'handlebars',
   directory: dir.source + 'layouts/',
 }
@@ -73,7 +73,7 @@ const setDate = require(dir.lib + 'metalsmith-setdate')
 const moreMeta = require(dir.lib + 'metalsmith-moremeta')
 const debug = build.consoleLog ? require(dir.lib + 'metalsmith-debug') : null
 
-var base = metalsmith(dir.base)
+const base = metalsmith(dir.base)
   .clean(true)
   .source(dir.source + 'html/')
   .destination(dir.dest)

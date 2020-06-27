@@ -1,5 +1,6 @@
 ---
 title: Project title
+language: None
 description: Project description
 publish: private
 

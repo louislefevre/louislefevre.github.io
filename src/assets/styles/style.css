@@ -180,41 +180,6 @@ header ul>li>a.active {
   margin: auto;
 }
 
-/* Form */
-.form
-{
-  margin-top: 1em;
-  border-radius: 5px;
-  line-height: 10px;
-}
-.form input[type=text], .form textarea
-{
-  width: 100%;
-  padding: 0.5em;
-  margin: 5px 0;
-  border-style: solid;
-  border-color: #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-.form textarea {
-  min-height: 50%;
-  min-width: 100%;
-  max-width: 100%;
-}
-
-.form input[type=submit]
-{
-  width: 100%;
-  cursor: pointer;
-  background-color: rgb(0, 129, 200);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 15px;
-  margin: 5px 0;
-}
-
 /* Footer */
 footer {
   margin-top: 3em;

@@ -61,7 +61,7 @@ header ul>li>a.active {
 .home hr {
   margin: auto;
   max-width: 20em;
-  border: solid 0.18em;
+  border: solid 0.20em;
 }
 .home .about {
   font-size: 1.75em;

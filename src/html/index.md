@@ -9,7 +9,7 @@ priority: 1.0
 
 image: images/profile-picture.jpg
 name: Louis Lefevre
-description: Computer Science student at Goldsmiths, University of London
+description: Software Systems Engineering MSc at University College London
 links:
   - url: https://github.com/louislefevre
     icon: fab fa-github

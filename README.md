@@ -1,2 +1,2 @@
 # Portfolio
-Personal website detailing my projects.
+Personal portfolio and blog.

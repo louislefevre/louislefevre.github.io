@@ -11,10 +11,11 @@ mode: dark
 author:
   name: Louis Lefevre
   bio: UCL Software Systems Engineering MSc Graduate
-  username: louislefevre
-  github: louislefevre
-  email: louislefev@gmail.com
   avatar: /assets/img/avatar.jpg
+  username: louislefevre
+  email: louislefev@gmail.com
+  github: https://github.com/louislefevre/
+  linkedin: https://www.linkedin.com/in/louislefev/
 
 # URL settings
 url: "https://louislefevre.github.io/"

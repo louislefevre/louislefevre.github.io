@@ -153,6 +153,19 @@ body[data-theme="dark"] {
     }
   }
 
+  // Author icons
+  .icons {
+    li>a {
+      border-color: $light;
+      color: $light;
+    }
+
+    li>a:hover {
+      background: $light;
+      color: $dark-black;
+    }
+  }
+
   // Post Item
   .post-item {
     &:not(:first-child) {

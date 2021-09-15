@@ -182,7 +182,7 @@
 // Author
 .author {
   margin-top: 6.3rem;
-  margin-bottom: 7.2rem;
+  margin-bottom: 5.7rem;
   text-align: center;
 
   @include media-query($on-mobile) {
@@ -212,6 +212,31 @@
     opacity: 0.9;
     max-width: 393px;
     line-height: 1.688;
+  }
+
+  // Icons
+  .icons {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    li>a {
+      display: inline-block;
+      width: 50px;
+      border-radius: 100%;
+      font-size: 20px;
+      line-height: 45px;
+      border: solid 2px $dark-black;
+      color: $dark-black;
+      background: 0 0;
+      transition: all .3s ease-in-out;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    li>a:hover {
+      background: $dark-black;
+      color: $light;
+    }
   }
 }
 

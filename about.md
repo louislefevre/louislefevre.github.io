@@ -5,4 +5,6 @@ layout: page
 comments: false
 ---
 
-MSc Software Systems Engineering graduate from UCL. BSc Computer Science graduate from Goldsmiths, University of London.
+Graduated from University College London with a first-class degree in Software Systems Engineering MSc, and from Goldsmiths, University of London with a first-class degree in Computer Science.
+
+Interested in backend software development, physical computing with Arduino, compiler design, and developing CLI tools.

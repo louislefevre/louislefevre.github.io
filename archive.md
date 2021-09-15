@@ -2,7 +2,6 @@
 title: Archive
 permalink: /archive/
 layout: page
-excerpt: All post.
 comments: false
 ---
 
